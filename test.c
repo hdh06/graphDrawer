@@ -1,12 +1,7 @@
 #include "raylib.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-struct Node {
-    int x;
-    int y;
-    char c; 
-};
+#include "graph.h"
 
 
 int rrange(int l, int r) {
@@ -44,16 +39,12 @@ int main(void)
             DrawRectangle(x += dir * 10, y, 100, 100, BLACK);
             
             // Draw a node 
-            struct Node node; 
-            node.x = 100; 
-            node.y = 100;
-            node.c = 'a';
+            struct Node* node; 
+            node->x = 100; 
+            node->y = 100;
+            node->c = "a";
 
-            float r;
-            for (r = 20; r < 23; r+=0.1) 
-                DrawCircleLines(100, 100, r, BLACK);
-
-            DrawText("c", node.x - 2.5f, node.y - 2.5f, 5, BLACK);
+            drawNode(node);
 
 
         EndDrawing();
