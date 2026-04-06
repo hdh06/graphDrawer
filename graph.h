@@ -1,3 +1,4 @@
+#ifndef GRAPH_H
 #define GRAPH_H 
 
 #include "raylib.h"
@@ -20,3 +21,4 @@ struct Line {
 
 void drawNode(struct Node* node);
 
+#endif
