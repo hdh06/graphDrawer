@@ -15,29 +15,19 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "test");
 
+    SetWindowState(FLAG_WINDOW_TOPMOST);
+
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
                                     //
-    Node node1; 
-    node1.x = 100; 
-    node1.c = "a";
-    node1.y = 100;
-    node1.clr = BLACK;
-
-    Node node2; 
-    node2.x = 200; 
-    node2.c = "a";
-    node2.y = 200;
-    node2.clr = BLACK;
+    Node node1 = {.x = 100, .y = 200, .c = "a", .clr = BLACK}; 
+    Node node2 = {.x = 200, .y = 200, .c = "a", .clr = BLACK}; 
+    Node node3 = {.x = 100, .y = 100, .c = "a", .clr = BLACK};
 
     Line line1; 
     line1.x = &node1;
     line1.y = &node2;
     line1.clr = BLACK;
 
-    int dir1x = 1;
-    int dir1y = 1;
-    int dir2x = 1;
-    int dir2y = 1;
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -48,40 +38,14 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            if (node1.x < screenWidth && node1.x > 0)
-                node1.x += 5 * dir1x;
-            else {
-                dir1x = -dir1x;
-                node1.x += 5 * dir1x;
-            }
-
-
-            if (node1.y < screenHeight && node1.y > 0)
-                node1.y += 10 * dir1y;
-            else {
-                dir1y = -dir1y;
-                node1.y += 10 * dir1y;
-            }
-
-            if (node2.x < screenWidth && node2.x > 0)
-                node2.x += 5 * dir2x;
-            else {
-                dir2x = -dir2x;
-                node2.x += 5 * dir2x;
-            }
-
-
-            if (node2.y < screenHeight && node2.y > 0)
-                node2.y += 20 * dir2y;
-            else {
-                dir2y = -dir2y;
-                node2.y += 20 * dir2y;
-            }
             // Draw a node 
             drawNode(&node2);
             drawNode(&node1);
+            drawNode(&node3); 
 
             drawLine(&line1);
+            drawLineN(&node2, &node3);
+            drawLineN(&node3, &node1);
 
         EndDrawing();
 

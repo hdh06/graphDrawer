@@ -9,7 +9,7 @@ void drawNode(Node* node) {
     DrawCircle(node->x, node->y, NODE_SIZE, node->clr);
     DrawCircle(node->x, node->y, NODE_SIZE - NODE_THICKNESS, WHITE);
 
-    DrawText(node->c, node->x, node->y, 5, BLACK);
+    DrawText(node->c - 2, node->x - 2, node->y, 5, BLACK);
 }
 
 void drawLine(Line* line) {
@@ -18,3 +18,8 @@ void drawLine(Line* line) {
 
     DrawLine(x->x, x->y, y->x, y->y, line->clr);
 }
+
+void drawLineN(Node* node1, Node* node2) {
+    DrawLine(node1->x, node1->y, node2->x, node2->y, BLACK);
+}
+
