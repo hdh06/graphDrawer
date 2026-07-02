@@ -19,6 +19,8 @@ typedef struct Line {
     Color clr;
 } Line;
 
+double nodeDistance(Node* node1, Node* node2);
+
 void drawNode(Node* node);
 void drawLine(Line* line);
 void drawLineN(Node* node1, Node* node2); 

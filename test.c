@@ -18,34 +18,31 @@ int main(void)
     SetWindowState(FLAG_WINDOW_TOPMOST);
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-                                    //
-    Node node1 = {.x = 100, .y = 200, .c = "a", .clr = BLACK}; 
-    Node node2 = {.x = 200, .y = 200, .c = "a", .clr = BLACK}; 
-    Node node3 = {.x = 100, .y = 100, .c = "a", .clr = BLACK};
+                        
+    Node cursorNode = {0, 0, "", BLANK};
 
-    Line line1; 
-    line1.x = &node1;
-    line1.y = &node2;
-    line1.clr = BLACK;
-
+    Node node1 = {100, 100, "a", BLACK};
+                                    
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         // Update
+        cursorNode.x = GetMouseX();
+        cursorNode.y = GetMouseY();
+
+        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+            if (nodeDistance(&cursorNode, &node1) <= 100) {
+                node1.x = GetMouseX();
+                node1.y = GetMouseY();
+            }
+        }
         // Draw
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
 
-            // Draw a node 
-            drawNode(&node2);
             drawNode(&node1);
-            drawNode(&node3); 
-
-            drawLine(&line1);
-            drawLineN(&node2, &node3);
-            drawLineN(&node3, &node1);
 
         EndDrawing();
 

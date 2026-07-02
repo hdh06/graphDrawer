@@ -1,9 +1,16 @@
 #include <stdio.h>
+#include <math.h>
 #include "graph.h" 
 #include "raylib.h"
 
 #define NODE_SIZE 23
 #define NODE_THICKNESS 3
+
+double nodeDistance(Node* node1, Node* node2) {
+    double dx = node1->x - node2->x;
+    double dy = node1->y - node2->y;
+    return sqrt(dx * dx + dy * dy);
+}
 
 void drawNode(Node* node) {
     DrawCircle(node->x, node->y, NODE_SIZE, node->clr);
