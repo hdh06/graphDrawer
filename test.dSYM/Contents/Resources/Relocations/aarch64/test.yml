@@ -2,12 +2,12 @@
 triple:          'arm64-apple-darwin'
 binary-path:     test
 relocations:
-  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A094, symSize: 0x68 }
-  - { offset: 0x33, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A094, symSize: 0x68 }
-  - { offset: 0x85, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x68, symBinAddr: 0x10007A0FC, symSize: 0xC8 }
-  - { offset: 0xA9, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0x130, symBinAddr: 0x10007A1C4, symSize: 0x68 }
-  - { offset: 0xE9, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x198, symBinAddr: 0x10007A22C, symSize: 0x64 }
-  - { offset: 0x25C, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x10007A290, symSize: 0x74 }
-  - { offset: 0x27E, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x10007A290, symSize: 0x74 }
-  - { offset: 0x2B4, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x10007A304, symSize: 0x128 }
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079E48, symSize: 0x74 }
+  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079E48, symSize: 0x74 }
+  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x100079EBC, symSize: 0x374 }
+  - { offset: 0x234, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A230, symSize: 0x68 }
+  - { offset: 0x241, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A230, symSize: 0x68 }
+  - { offset: 0x293, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x68, symBinAddr: 0x10007A298, symSize: 0xC8 }
+  - { offset: 0x2B7, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0x130, symBinAddr: 0x10007A360, symSize: 0x68 }
+  - { offset: 0x2F7, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x198, symBinAddr: 0x10007A3C8, symSize: 0x64 }
 ...

@@ -1,6 +1,6 @@
-test: test.c graph.c graph.h
+test: test.c graph.c graph.h da.h
 	 clang -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL libraylib.a \
-		 	*.c -g -o test
+		 	test.c graph.c -g -o test
 
 clean: test  
 	rm test

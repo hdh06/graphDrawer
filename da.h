@@ -1,4 +1,8 @@
+/*
+ * This is the header for dynamic arrays
+ */
 #include <stdlib.h>
+#include "graph.h"
 #ifndef DA_H
 #define DA_H
 
@@ -7,6 +11,18 @@ typedef struct {
     size_t count;
     size_t capacity;
 } Ints;
+
+typedef struct { 
+    float *items;
+    size_t count;
+    size_t capacity;
+} Floats;
+
+typedef struct {
+    Node *items;
+    size_t count;
+    size_t capacity;
+} Nodes;
 
 #define da_append(arr, x)                                                      \
     do {                                                                       \
@@ -17,5 +33,7 @@ typedef struct {
         }                                                                      \
         arr.items[arr.count++] = x;                                            \
     } while(0)                                                                 
+
+#define da_foreach(Type, it, arr) for (Type *it = (arr)->items; it < (arr)->items + (arr)->count; ++it)
 
 #endif // DA_H

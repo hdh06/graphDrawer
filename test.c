@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "graph.h"
+#include "da.h"
 
 
 int rrange(int l, int r) {
@@ -22,7 +23,14 @@ int main(void)
     Node cursorNode = {0, 0, "", BLANK};
 
     Node node1 = {100, 100, "a", BLACK};
-                                    
+    Node node2 = {200, 200, "a", BLACK};
+    Node node3 = {300, 300, "a", BLACK};
+
+    Nodes nodeArr = {0};
+
+    da_append(nodeArr, node1);
+    da_append(nodeArr, node2);
+    da_append(nodeArr, node3);
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -42,7 +50,9 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            drawNode(&node1);
+            da_foreach(Node, x, &nodeArr) {
+                drawNode(x);
+            }
 
         EndDrawing();
 
