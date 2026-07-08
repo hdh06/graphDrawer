@@ -1,6 +1,7 @@
 #include "raylib.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "graph.h"
 #include "da.h"
 
@@ -11,6 +12,7 @@ int rrange(int l, int r) {
 
 int main(void)
 {
+    srand(time(NULL));
     const int screenWidth = 800;
     const int screenHeight = 800;
 
@@ -22,15 +24,12 @@ int main(void)
                         
     Node cursorNode = {0, 0, "", BLANK};
 
-    Node node1 = {100, 100, "a", BLACK};
-    Node node2 = {200, 200, "a", BLACK};
-    Node node3 = {300, 300, "a", BLACK};
-
     Nodes nodeArr = {0};
 
-    da_append(nodeArr, node1);
-    da_append(nodeArr, node2);
-    da_append(nodeArr, node3);
+    for (int i = 0; i < 10; i++) {
+        Node tmp = {rrange(100, 700), rrange(100, 700), "a", BLACK};
+        da_append(nodeArr, tmp);
+    }
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -40,10 +39,8 @@ int main(void)
         cursorNode.y = GetMouseY();
 
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
-            if (nodeDistance(&cursorNode, &node1) <= 100) {
-                node1.x = GetMouseX();
-                node1.y = GetMouseY();
-            }
+//            if (nodeDistance(&cursorNode, &node1) <= 100) {
+//            }
         }
         // Draw
         BeginDrawing();
@@ -52,6 +49,9 @@ int main(void)
 
             da_foreach(Node, x, &nodeArr) {
                 drawNode(x);
+                da_foreach(Node, y, &nodeArr) {
+                    drawLineN(x, y);
+                }
             }
 
         EndDrawing();

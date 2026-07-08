@@ -2,12 +2,12 @@
 triple:          'arm64-apple-darwin'
 binary-path:     test
 relocations:
-  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079E48, symSize: 0x74 }
-  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079E48, symSize: 0x74 }
-  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x100079EBC, symSize: 0x374 }
-  - { offset: 0x234, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A230, symSize: 0x68 }
-  - { offset: 0x241, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A230, symSize: 0x68 }
-  - { offset: 0x293, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x68, symBinAddr: 0x10007A298, symSize: 0xC8 }
-  - { offset: 0x2B7, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0x130, symBinAddr: 0x10007A360, symSize: 0x68 }
-  - { offset: 0x2F7, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x198, symBinAddr: 0x10007A3C8, symSize: 0x64 }
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079F10, symSize: 0x74 }
+  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079F10, symSize: 0x74 }
+  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x100079F84, symSize: 0x2A0 }
+  - { offset: 0x25E, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A224, symSize: 0x68 }
+  - { offset: 0x26B, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x0, symBinAddr: 0x10007A224, symSize: 0x68 }
+  - { offset: 0x2BD, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x68, symBinAddr: 0x10007A28C, symSize: 0xC8 }
+  - { offset: 0x2E1, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0x130, symBinAddr: 0x10007A354, symSize: 0x68 }
+  - { offset: 0x321, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x198, symBinAddr: 0x10007A3BC, symSize: 0x64 }
 ...
