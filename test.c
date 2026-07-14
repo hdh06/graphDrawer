@@ -37,8 +37,12 @@ int main(void)
         // Update
 
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
-//            if (nodeDistance(&cursorNode, &node1) <= 100) {
-//            }
+            da_foreach(Node, x, &nodeArr) {
+                if (CheckCollisionPointCircle(GetMousePosition(), x->pos, 23)){ 
+                    x->pos = GetMousePosition();
+                    break;
+                }
+            }
         }
         // Draw
         BeginDrawing();

@@ -2,11 +2,11 @@
 triple:          'arm64-apple-darwin'
 binary-path:     test
 relocations:
-  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079F8C, symSize: 0x74 }
-  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079F8C, symSize: 0x74 }
-  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x10007A000, symSize: 0x298 }
-  - { offset: 0x285, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x10007A298, symSize: 0xCC }
-  - { offset: 0x292, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x10007A298, symSize: 0xCC }
-  - { offset: 0x2B6, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0xCC, symBinAddr: 0x10007A364, symSize: 0x60 }
-  - { offset: 0x2F6, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x12C, symBinAddr: 0x10007A3C4, symSize: 0x5C }
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079EF0, symSize: 0x74 }
+  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079EF0, symSize: 0x74 }
+  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x100079F64, symSize: 0x334 }
+  - { offset: 0x2A3, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x10007A298, symSize: 0xCC }
+  - { offset: 0x2B0, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x10007A298, symSize: 0xCC }
+  - { offset: 0x2D4, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0xCC, symBinAddr: 0x10007A364, symSize: 0x60 }
+  - { offset: 0x314, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x12C, symBinAddr: 0x10007A3C4, symSize: 0x5C }
 ...
