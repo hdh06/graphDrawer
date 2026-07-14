@@ -35,8 +35,6 @@ int main(void)
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         // Update
-        cursorNode.x = GetMouseX();
-        cursorNode.y = GetMouseY();
 
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
 //            if (nodeDistance(&cursorNode, &node1) <= 100) {

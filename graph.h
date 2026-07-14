@@ -1,11 +1,10 @@
+#include "raylib.h"
+
 #ifndef GRAPH_H
 #define GRAPH_H 
 
-#include "raylib.h"
-
 typedef struct Node {
-    int x;
-    int y;
+    Vector2 pos;
     char* c;
     Color clr;  
 } Node;
