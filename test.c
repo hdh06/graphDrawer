@@ -36,13 +36,19 @@ int main(void)
     {
         // Update
 
+        Node *follower;
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
-            da_foreach(Node, x, &nodeArr) {
-                if (CheckCollisionPointCircle(GetMousePosition(), x->pos, 23)){ 
-                    x->pos = GetMousePosition();
-                    break;
+            if (follower == NULL)
+                da_foreach(Node, x, &nodeArr) {
+                    if (CheckCollisionPointCircle(GetMousePosition(), x->pos, 50)){ 
+                        follower = x;
+                        break;
+                    }
                 }
-            }
+
+            follower->pos= GetMousePosition();
+        } else {
+            follower = NULL;
         }
         // Draw
         BeginDrawing();
