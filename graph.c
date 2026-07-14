@@ -16,7 +16,7 @@ void drawNode(Node* node) {
     DrawCircleV(node->pos, NODE_SIZE, node->clr);
     DrawCircleV(node->pos, NODE_SIZE - NODE_THICKNESS, WHITE);
 
-    DrawText(node->c - 2, node->pos.x - 2, node->pos.y, 5, BLACK);
+    DrawText(node->c, node->pos.x - 2, node->pos.y - 2, 5, BLACK);
 }
 
 void drawLine(Line* line) {
