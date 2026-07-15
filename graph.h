@@ -3,6 +3,9 @@
 #ifndef GRAPH_H
 #define GRAPH_H 
 
+#define NODE_SIZE 23
+#define NODE_THICKNESS 3
+
 typedef struct Node {
     Vector2 pos;
     char* c;

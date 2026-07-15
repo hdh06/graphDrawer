@@ -3,9 +3,6 @@
 #include "graph.h" 
 #include "raylib.h"
 
-#define NODE_SIZE 23
-#define NODE_THICKNESS 3
-
 //double nodeDistance(Node* node1, Node* node2) {
 //    double dx = node1->x - node2->x;
 //    double dy = node1->y - node2->y;

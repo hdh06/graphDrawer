@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "raymath.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -21,7 +22,10 @@ int main(void)
     SetWindowState(FLAG_WINDOW_TOPMOST);
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-                        
+
+    Camera2D camera = {0};
+    camera.zoom = 1.0f;
+
     Node cursorNode = {0, 0, "", BLANK};
 
     Nodes nodeArr = {0};
@@ -40,19 +44,21 @@ int main(void)
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
             if (follower == NULL)
                 da_foreach(Node, x, &nodeArr) {
-                    if (CheckCollisionPointCircle(GetMousePosition(), x->pos, 50)){ 
+                    if (CheckCollisionPointCircle(GetMousePosition(), x->pos, NODE_SIZE + 10)){ 
                         follower = x;
                         break;
                     }
                 }
 
-            follower->pos= GetMousePosition();
+            if (follower != NULL)
+                follower->pos= GetMousePosition();
         } else {
             follower = NULL;
         }
         // Draw
         BeginDrawing();
 
+            BeginMode2D(camera);
             ClearBackground(RAYWHITE);
 
             da_foreach(Node, x, &nodeArr) {
@@ -61,6 +67,7 @@ int main(void)
                     drawLineN(x, y);
                 }
             }
+            EndMode2D();
 
         EndDrawing();
 
