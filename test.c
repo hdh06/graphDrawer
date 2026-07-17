@@ -40,7 +40,7 @@ int main(void)
     {
         // Update
 
-        Node *follower;
+        Node *follower = NULL;
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
             if (follower == NULL)
                 da_foreach(Node, x, &nodeArr) {
@@ -52,8 +52,28 @@ int main(void)
 
             if (follower != NULL)
                 follower->pos= GetMousePosition();
+            else {
+//                Vector2 delta = GetMouseDelta();
+//                delta = Vector2Scale(delta, -1.0f/camera.zoom);
+//                camera.target = Vector2Add(camera.target, delta);
+            }
         } else {
             follower = NULL;
+        }
+        
+        // TODO: fix the bug that the actual mouse seem to be not following the zoom scale
+        // Zooming 
+        float wheel = GetMouseWheelMove();
+        if (wheel != 0) {
+            Vector2 mouseWorldPos = GetScreenToWorld2D(GetMousePosition(), camera);
+
+            camera.offset = GetMousePosition();
+
+            camera.target = mouseWorldPos;
+
+            float scale = 0.2f * wheel;
+            camera.zoom = Clamp(expf(logf(camera.zoom) + scale), 0.125f, 64.0f);
+
         }
         // Draw
         BeginDrawing();
@@ -62,11 +82,14 @@ int main(void)
             ClearBackground(RAYWHITE);
 
             da_foreach(Node, x, &nodeArr) {
-                drawNode(x);
                 da_foreach(Node, y, &nodeArr) {
                     drawLineN(x, y);
                 }
             }
+
+            da_foreach(Node, x, &nodeArr)
+                drawNode(x);
+
             EndMode2D();
 
         EndDrawing();
