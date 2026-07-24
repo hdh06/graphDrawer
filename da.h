@@ -24,6 +24,12 @@ typedef struct {
     size_t capacity;
 } Nodes;
 
+typedef struct {
+    Nodes *items;
+    size_t count;
+    size_t capacity;
+} AdjList;
+
 #define da_append(arr, x)                                                      \
     do {                                                                       \
         if (arr.count >= arr.capacity) {                                       \

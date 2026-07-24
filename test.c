@@ -35,6 +35,17 @@ int main(void)
         da_append(nodeArr, tmp);
     }
 
+    AdjList adjList = {0};
+
+    for (int i = 0; i < nodeArr.count; i++) {
+        Nodes list = {0}; 
+
+        if (i > 0)
+            da_append(list, &nodeArr.items[i - 1]);
+
+        da_append(adjList, list);
+    }
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -71,7 +82,7 @@ int main(void)
 
             camera.target = mouseWorldPos;
 
-            float scale = 0.2f * wheel;
+            float scale = 0.5f * wheel;
             camera.zoom = Clamp(expf(logf(camera.zoom) + scale), 0.125f, 64.0f);
 
         }
@@ -81,10 +92,9 @@ int main(void)
             BeginMode2D(camera);
             ClearBackground(RAYWHITE);
 
-            da_foreach(Node, x, &nodeArr) {
-                da_foreach(Node, y, &nodeArr) {
-                    drawLineN(x, y);
-                }
+            for (int i = 0; i < adjList.count; i++) {
+                da_foreach(Node, x, &adjList.items[i])
+                    drawLineN(&nodeArr.items[i], x);
             }
 
             da_foreach(Node, x, &nodeArr)
