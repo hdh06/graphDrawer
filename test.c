@@ -38,10 +38,15 @@ int main(void)
     AdjList adjList = {0};
 
     for (int i = 0; i < nodeArr.count; i++) {
-        Nodes list = {0}; 
+        Lines list = {0}; 
 
-        if (i > 0)
-            da_append(list, &nodeArr.items[i - 1]);
+        if (i > 0) {
+            Line line = {0};
+            line.x = &nodeArr.items[i];
+            line.y = &nodeArr.items[i - 1];
+            line.clr = BLACK;
+            da_append(list, line);
+        }
 
         da_append(adjList, list);
     }
@@ -92,9 +97,10 @@ int main(void)
             BeginMode2D(camera);
             ClearBackground(RAYWHITE);
 
-            for (int i = 0; i < adjList.count; i++) {
-                da_foreach(Node, x, &adjList.items[i])
-                    drawLineN(&nodeArr.items[i], x);
+            for (int i = 1; i < adjList.count; i++) {
+                da_foreach(Line, x, &adjList.items[i])
+                    drawLine(x);
+                    // drawLineN(&nodeArr.items[i - 1], &nodeArr.items[i]);
             }
 
             da_foreach(Node, x, &nodeArr)

@@ -25,7 +25,13 @@ typedef struct {
 } Nodes;
 
 typedef struct {
-    Nodes *items;
+    Line *items;
+    size_t count;
+    size_t capacity;
+} Lines;
+
+typedef struct {
+    Lines *items;
     size_t count;
     size_t capacity;
 } AdjList;
