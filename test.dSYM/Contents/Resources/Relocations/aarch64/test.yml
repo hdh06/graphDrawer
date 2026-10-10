@@ -2,11 +2,15 @@
 triple:          'arm64-apple-darwin'
 binary-path:     test
 relocations:
-  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079960, symSize: 0x74 }
-  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079960, symSize: 0x74 }
-  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x1000799D4, symSize: 0x6C0 }
-  - { offset: 0x4B0, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x10007A094, symSize: 0xCC }
-  - { offset: 0x4BD, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x10007A094, symSize: 0xCC }
-  - { offset: 0x4E1, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0xCC, symBinAddr: 0x10007A160, symSize: 0x60 }
-  - { offset: 0x521, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x12C, symBinAddr: 0x10007A1C0, symSize: 0x5C }
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079870, symSize: 0x74 }
+  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _rrange, symObjAddr: 0x0, symBinAddr: 0x100079870, symSize: 0x74 }
+  - { offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x74, symBinAddr: 0x1000798E4, symSize: 0x6C0 }
+  - { offset: 0x4B0, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x100079FA4, symSize: 0xCC }
+  - { offset: 0x4BD, size: 0x8, addend: 0x0, symName: _drawNode, symObjAddr: 0x0, symBinAddr: 0x100079FA4, symSize: 0xCC }
+  - { offset: 0x4E1, size: 0x8, addend: 0x0, symName: _drawLine, symObjAddr: 0xCC, symBinAddr: 0x10007A070, symSize: 0x60 }
+  - { offset: 0x521, size: 0x8, addend: 0x0, symName: _drawLineN, symObjAddr: 0x12C, symBinAddr: 0x10007A0D0, symSize: 0x5C }
+  - { offset: 0x553, size: 0x8, addend: 0x0, symName: _nodeDistance, symObjAddr: 0x188, symBinAddr: 0x10007A12C, symSize: 0x40 }
+  - { offset: 0x589, size: 0x8, addend: 0x0, symName: _nodeDistanceSqr, symObjAddr: 0x1C8, symBinAddr: 0x10007A16C, symSize: 0x40 }
+  - { offset: 0x5BF, size: 0x8, addend: 0x0, symName: _f_att, symObjAddr: 0x208, symBinAddr: 0x10007A1AC, symSize: 0x34 }
+  - { offset: 0x5F5, size: 0x8, addend: 0x0, symName: _f_rep, symObjAddr: 0x23C, symBinAddr: 0x10007A1E0, symSize: 0x3C }
 ...

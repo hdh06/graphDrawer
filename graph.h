@@ -6,6 +6,8 @@
 #define NODE_SIZE 23
 #define NODE_THICKNESS 3
 
+#define K_SPRING 10
+
 typedef struct Node {
     Vector2 pos;
     char* c;
@@ -22,9 +24,13 @@ typedef struct Line {
 } Line;
 
 double nodeDistance(Node* node1, Node* node2);
+double nodeDistanceSqr(Node* node1, Node* node2);
 
 void drawNode(Node* node);
 void drawLine(Line* line);
 void drawLineN(Node* node1, Node* node2); 
+
+double f_att(Node* x, Node*y);
+double f_rep(Node* x, Node*y);
 
 #endif

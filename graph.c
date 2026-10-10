@@ -2,6 +2,7 @@
 #include <math.h>
 #include "graph.h" 
 #include "raylib.h"
+#include "raymath.h"
 
 //double nodeDistance(Node* node1, Node* node2) {
 //    double dx = node1->x - node2->x;
@@ -27,3 +28,26 @@ void drawLineN(Node* node1, Node* node2) {
     DrawLineV(node1->pos, node2->pos, BLACK);
 }
 
+/* -----------------------------------
+ * Force Directed Calculation 
+ * -----------------------------------
+ */
+
+// calcualte distance between two nodes
+double nodeDistance(Node* node1, Node* node2) {
+    return Vector2Distance(node1->pos, node2->pos);
+}
+
+// calcualte squared distance between two nodes
+double nodeDistanceSqr(Node* node1, Node* node2) {
+    return Vector2DistanceSqr(node1->pos, node2->pos);
+}
+
+// calculate attractive force between two nodes
+double f_att(Node* x, Node* y) {
+    return nodeDistanceSqr(x, y) / K_SPRING;
+}
+// calculate repulsive force between two nodes
+double f_rep(Node* x, Node* y) {
+    return K_SPRING * K_SPRING / nodeDistance(x, y);
+}
